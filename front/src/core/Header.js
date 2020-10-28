@@ -47,6 +47,10 @@ const HeaderContent = styled.div `
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 767px) {
+    height: 60px;
+    justify-content: center;
+  }
 `
 
 export default Header

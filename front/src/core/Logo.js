@@ -18,5 +18,11 @@ const Logo = () => {
 const LogoWrapper = styled.div `
   width: auto;
   height: auto;
+  @media screen and (max-width: 767px) {
+    svg {
+      width: 79px;
+      height: auto;
+    }
+  }
 `
 export default Logo

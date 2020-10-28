@@ -18,15 +18,18 @@ const Menu = () => {
     <MenuWrapper>
 
       <MenuButton to="/" exact={ true }>
-        <ReactSVG src={ HomeIcon } /> Home
+        <ReactSVG src={ HomeIcon } />
+        <span>Home</span>
       </MenuButton>
 
       <MenuButton to="/login" exact={ true }>
-        <ReactSVG src={ LoginIcon } /> Entrar
+        <ReactSVG src={ LoginIcon } />
+        <span>Entrar</span>
       </MenuButton>
 
       <MenuButton to="/minhas-compras" exact={ true }>
-        <ReactSVG src={ CartIcon } /> Minhas Compras
+        <ReactSVG src={ CartIcon } />
+        <span>Minhas Compras</span>
       </MenuButton>
 
     </MenuWrapper>
@@ -43,9 +46,19 @@ const MenuWrapper = styled.nav `
   margin: 0;
   display: flex;
   justify-content: flex-start;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 0 20px;
+    background: #000;
+  }
 `
 const MenuButton = styled(NavLink) `
-  color: #fff;
   text-decoration: none;
   text-transform: lowercase;
   margin-right: 25px;
@@ -60,12 +73,21 @@ const MenuButton = styled(NavLink) `
     margin-right: 10px;
     fill: #fff;
   }
-  &:visited, &:active {
+  span {
     color: #fff;
-    text-decoration: none;
+    transition: all ease-in-out .5s;
+  }
+  &:visited, &:active, &:focus {
+    span {
+      color: #fff;
+      text-decoration: none;
+    }
   }
   &:hover {
-    color: ${PrimaryColor};
+    span {
+      color: ${PrimaryColor};
+      text-decoration: none;
+    }
     svg {
       fill: ${PrimaryColor};
     }
@@ -74,9 +96,16 @@ const MenuButton = styled(NavLink) `
     margin-right: 0;
   }
   &.active {
-    color: ${PrimaryColor};
+    span {
+      color: ${PrimaryColor};
+    }
     svg {
       fill: ${PrimaryColor};
+    }
+  }
+  @media screen and (max-width: 767px) {
+    span {
+      display: none;
     }
   }
 `
