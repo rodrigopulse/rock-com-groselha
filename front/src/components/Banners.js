@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const viewWidth = window.innerWidth
 
-const Hero = (props) => {
+const Banners = (props) => {
 
   return (
 
@@ -35,4 +35,4 @@ const HeroContainer = styled.div `
   }
 `
 
-export default Hero
+export default Banners

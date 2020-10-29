@@ -68,6 +68,7 @@ const MenuButton = styled(NavLink) `
   align-items: center;
   padding: 0;
   margin-right: 80px;
+  z-index: 2;
   svg {
     transition: all ease-in-out .5s;
     margin-right: 10px;
