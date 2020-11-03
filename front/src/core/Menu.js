@@ -17,20 +17,20 @@ const Menu = () => {
 
     <MenuWrapper>
 
-      <MenuButton to="/" exact={ true }>
+      <MenuBotao to="/" exact={ true }>
         <ReactSVG src={ HomeIcon } />
         <span>Home</span>
-      </MenuButton>
+      </MenuBotao>
 
-      <MenuButton to="/login" exact={ true }>
+      <MenuBotao to="/login" exact={ true }>
         <ReactSVG src={ LoginIcon } />
         <span>Entrar</span>
-      </MenuButton>
+      </MenuBotao>
 
-      <MenuButton to="/minhas-compras" exact={ true }>
+      <MenuBotao to="/minhas-compras" exact={ true }>
         <ReactSVG src={ CartIcon } />
         <span>Minhas Compras</span>
-      </MenuButton>
+      </MenuBotao>
 
     </MenuWrapper>
 
@@ -58,7 +58,7 @@ const MenuWrapper = styled.nav `
     background: #000;
   }
 `
-const MenuButton = styled(NavLink) `
+const MenuBotao = styled(NavLink) `
   text-decoration: none;
   text-transform: lowercase;
   margin-right: 25px;
