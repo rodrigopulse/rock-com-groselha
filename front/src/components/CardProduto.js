@@ -1,11 +1,14 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
+
 // Styles
 import { GrayColor, GraphiteColor } from '../assets/styles/CoresStyles'
 
 // Utils
 import { precoBrasil } from '../utils/dataFormat'
+
+// Components
+import Botao from './Botao'
 
 const CardProduto = (props) => {
 
@@ -15,7 +18,7 @@ const CardProduto = (props) => {
 
   return (
 
-    <CardProdutoContainer to="#">
+    <CardProdutoContainer>
 
       <ImagemDestaqueProduto src = { `${ process.env.REACT_APP_IMAGES_URL }/${props.produto.imagens[0].filename}` } />
 
@@ -25,6 +28,10 @@ const CardProduto = (props) => {
 
         <CardProdutoPreco>{ precoBrasil(props.produto.preco) }</CardProdutoPreco>
 
+        <CardProdutoBotaoContainer>
+          <Botao as="a" texto="ver produto"/>
+        </CardProdutoBotaoContainer>
+
       </CardProdutoConteudo>
 
     </CardProdutoContainer>
@@ -33,7 +40,7 @@ const CardProduto = (props) => {
 
 }
 
-const CardProdutoContainer = styled(Link) `
+const CardProdutoContainer = styled.div `
   width: 100%;
   height: auto;
   text-decoration: none;
@@ -60,6 +67,13 @@ const CardProdutoPreco = styled.span `
   font-weight: 700;
   display: block;
   color: ${GraphiteColor};
+`
+
+const CardProdutoBotaoContainer = styled.div `
+  width: 100%;
+  height: auto;
+  display: block;
+  padding-top: 15px;
 `
 
 export default CardProduto
