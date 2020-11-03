@@ -19,13 +19,13 @@ const CardProduto = (props) => {
 
       <ImagemDestaqueProduto src = { `${ process.env.REACT_APP_IMAGES_URL }/${props.produto.imagens[0].filename}` } />
 
-      <CardProdutoContent>
+      <CardProdutoConteudo>
 
         <CardProdutoTitulo>{ props.produto.titulo }</CardProdutoTitulo>
 
         <CardProdutoPreco>{ precoBrasil(props.produto.preco) }</CardProdutoPreco>
 
-      </CardProdutoContent>
+      </CardProdutoConteudo>
 
     </CardProdutoContainer>
 
@@ -43,7 +43,7 @@ const ImagemDestaqueProduto = styled.img `
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
   margin-bottom: 10px;
 `
-const CardProdutoContent = styled.div `
+const CardProdutoConteudo = styled.div `
   width: 100%;
   height: auto;
 `
