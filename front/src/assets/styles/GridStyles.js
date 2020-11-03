@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 // Styles
-import { MaxWidth } from './VariablesStyles'
+import { MaxWidth } from './VariaveisStyles'
 
 export const Container = styled.div `
   width: 100%;

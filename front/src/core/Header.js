@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 // Styles
-import { MaxWidth } from '../assets/styles/VariablesStyles'
+import { MaxWidth } from '../assets/styles/VariaveisStyles'
 
 // Core
 import Menu from './Menu'

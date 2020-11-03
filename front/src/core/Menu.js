@@ -4,7 +4,7 @@ import { ReactSVG } from 'react-svg'
 
 // Styles
 import styled from 'styled-components'
-import { PrimaryColor } from '../assets/styles/ColorStyles'
+import { PrimaryColor } from '../assets/styles/CoresStyles'
 
 // Icons
 import HomeIcon from '../assets/images/icons/home.svg'
