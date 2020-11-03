@@ -17,23 +17,19 @@ const Home = () => {
   const [produtosState, setProdutoState] = useState([])
 
   const getBanners = async () => {
-    try {
-      const banners = await getBanner()
-      setBannerState(banners.data)
-      return banners
-    } catch {
-      return false
-    }
+    getBanner()
+      .then( res => {
+        setBannerState(res.data)
+      })
+      .catch( err => { console.log('ERRO: ', err.response )})
   }
 
   const getProdutosHome = async () => {
-    try {
-      const produtos = await getProdutos(50, 1)
-      setProdutoState(produtos.data.produto)
-      return produtos
-    } catch {
-      return false
-    }
+    getProdutos(50, 1)
+      .then( res => {
+        setProdutoState(res.data.produto)
+      })
+      .catch( err => { console.log('ERRO: ', err.response )})
   }
 
   useEffect( () => {

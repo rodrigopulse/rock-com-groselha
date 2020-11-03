@@ -1,4 +1,4 @@
-export function priceFormat(price) {
+export const precoBrasil = (data) => {
 
   const priceFormat = new Intl.NumberFormat('pt-BR', {
     style: 'currency',
@@ -7,5 +7,6 @@ export function priceFormat(price) {
     prefix: 'R$ ',
   })
 
-  return priceFormat.format(price)
+  return priceFormat.format(data)
+
 }

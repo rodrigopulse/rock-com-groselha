@@ -1,12 +1,14 @@
 import axios from 'axios'
 
-export const getBanner = () => {
-  return new Promise( (resolve, reject) => {
-    axios({
+export const getBanner = async () => {
+  try {
+    const banner = axios({
       url: `${process.env.REACT_APP_API_URL}/banner`,
       method: "GET"
     })
-    .then( res => resolve(res) )
-    .catch( err => reject(err) );
-  })
+    return banner
+  }
+  catch( err ) {
+    return err
+  }
 }
