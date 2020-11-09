@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 // Styles
 import { GrayColor, GraphiteColor } from '../assets/styles/CoresStyles'
@@ -18,7 +19,7 @@ const CardProduto = (props) => {
 
   return (
 
-    <CardProdutoContainer>
+    <CardProdutoContainer to="/teste">
 
       <ImagemDestaqueProduto src = { `${ process.env.REACT_APP_IMAGES_URL }/${props.produto.imagens[0].filename}` } />
 
@@ -29,7 +30,7 @@ const CardProduto = (props) => {
         <CardProdutoPreco>{ precoBrasil(props.produto.preco) }</CardProdutoPreco>
 
         <CardProdutoBotaoContainer>
-          <Botao as="a" texto="ver produto"/>
+          <Botao as="span" texto="ver produto"/>
         </CardProdutoBotaoContainer>
 
       </CardProdutoConteudo>
@@ -40,7 +41,7 @@ const CardProduto = (props) => {
 
 }
 
-const CardProdutoContainer = styled.div `
+const CardProdutoContainer = styled(Link) `
   width: 100%;
   height: auto;
   text-decoration: none;
