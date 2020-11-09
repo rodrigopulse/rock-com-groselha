@@ -13,7 +13,7 @@ const ListaCardProdutos = (props) => {
 
     <ContainerContent direction="row" justify="flex-start" align="flex-start">
 
-      { props.produtos.length > 0 && props.produtos.map( (res, index) => (
+      { props.produtos.map( (res, index) => (
 
         <CardProdutosItem key={index}>
 

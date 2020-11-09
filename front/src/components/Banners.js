@@ -9,7 +9,7 @@ const Banners = (props) => {
 
     <HeroContainer>
 
-      { props.banners.length > 0 && props.banners.map( (res, index) => (
+      { props.banners.map( (res, index) => (
         <img
           key = { index }
           src = { `${ process.env.REACT_APP_IMAGES_URL }/${ viewWidth <= 768 ? res.imagemMobile : res.imagemDesktop }` }
