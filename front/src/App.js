@@ -16,6 +16,7 @@ import Header from './core/Header'
 
 //Screens
 import Home from './screens/Home'
+import Produto from './screens/Produto'
 
 const App = () => (
     <Provider store={Store}>
@@ -28,9 +29,9 @@ const App = () => (
 
         <Switch>
 
-          <Route path="/">
-            <Home />
-          </Route>
+          <Route path="/produto/:slug"><Produto /></Route>
+
+          <Route path="/"><Home /></Route>
 
         </Switch>
 

@@ -12,3 +12,16 @@ export const getProdutos = async (limite, pagina) => {
     return err
   }
 }
+
+export const getProdutoSlug = async (slug) => {
+  try {
+    const produtos = axios({
+      url: `${process.env.REACT_APP_API_URL}/produtoslug/${slug}`,
+      method: "GET"
+    })
+    return produtos
+  }
+  catch(err) {
+    return err
+  }
+}

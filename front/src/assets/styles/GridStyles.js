@@ -11,6 +11,16 @@ export const Container = styled.div `
   padding: 0;
   margin: 0;
 `
+
+export const ContainerPaginas = styled.div `
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  padding: 30px 0;
+  margin: 0;
+`
+
 export const ContainerContent = styled.div `
   width: 100%;
   max-width: ${MaxWidth};

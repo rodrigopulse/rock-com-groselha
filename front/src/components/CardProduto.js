@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
@@ -13,13 +13,9 @@ import Botao from './Botao'
 
 const CardProduto = (props) => {
 
-  useEffect( () => {
-    console.log(props)
-  }, [props])
-
   return (
 
-    <CardProdutoContainer to="/teste">
+    <CardProdutoContainer to={`/produto/${props.produto.slug}`}>
 
       <ImagemDestaqueProduto src = { `${ process.env.REACT_APP_IMAGES_URL }/${props.produto.imagens[0].filename}` } />
 

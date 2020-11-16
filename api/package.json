@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec babel-node src/server.js",
     "build": "babel src -s -d dist",
-    "start": "node dist/server.js"
+    "start": "nodemon --exec babel-node src/server.js"
   },
   "license": "MIT",
   "devDependencies": {
