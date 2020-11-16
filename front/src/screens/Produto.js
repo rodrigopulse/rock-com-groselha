@@ -10,6 +10,7 @@ import { getProdutoSlug } from '../api/produtos'
 
 // Components
 import GaleriaProduto from '../components/GaleriaProduto'
+import ConteudoProduto from '../components/ConteudoProduto'
 
 const Produto = () => {
 
@@ -35,17 +36,17 @@ const Produto = () => {
         {produtoState != null &&
           <ContainerProduto>
 
-            <ConteudoProduto>
+            <ItemProduto>
 
               <GaleriaProduto imagens={produtoState.imagens} />
 
-            </ConteudoProduto>
+            </ItemProduto>
 
-            <ConteudoProduto>
+            <ItemProduto>
 
-              <h1>{produtoState.titulo}</h1>
+              <ConteudoProduto titulo={produtoState.titulo} />
 
-            </ConteudoProduto>
+            </ItemProduto>
 
           </ContainerProduto>
         }
@@ -63,10 +64,17 @@ const ContainerProduto = styled.div `
   flex-wrap: wrap;
 `
 
-const ConteudoProduto = styled.div `
-  width: 50%;
+const ItemProduto = styled.div `
+  width: 100%;
   height: auto;
   position: relative;
+  @media (min-width: 768px) {
+    width: 50%;
+    padding-left: 20px;
+    &:first-child {
+      padding-left: 0;
+    }
+  }
 `
 
 export default Produto
