@@ -44,7 +44,7 @@ const Produto = () => {
 
             <ItemProduto>
 
-              <ConteudoProduto titulo={produtoState.titulo} />
+              <ConteudoProduto produto={produtoState} />
 
             </ItemProduto>
 

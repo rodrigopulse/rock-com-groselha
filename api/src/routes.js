@@ -68,6 +68,7 @@ routes.get('/pedido/:codigoPedido', auth.verificaToken, PedidoController.get)
 
 // Pagamento
 routes.post('/pagar/cartao', PagamentoController.pagarCartao)
+routes.get('/parcelas/:valor', PagamentoController.valorParcelas)
 
 // Frete
 routes.post('/frete/calcula', FreteController.calcula)

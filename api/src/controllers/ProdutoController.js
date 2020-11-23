@@ -49,7 +49,7 @@ class ProdutoController {
   async getSlug (req, res) {
     try {
       const slug = req.path.split('/').pop()
-      const produto = await (await Produto.findOne({ slug: slug }).populate('categoria').populate('embalagem'))
+      const produto = await Produto.findOne({ slug: slug }).populate('categoria').populate('embalagem')
       return res.status(200).json(produto)
     } catch (err) {
       return res.status(400).json({ mensagem: 'Produto não encontrado', erro: err })

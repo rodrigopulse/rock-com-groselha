@@ -1,6 +1,7 @@
 import pagarme from 'pagarme'
+import axios from 'axios'
 
-export default function pagarCartao(data) {
+export function pagarCartao(data) {
   return new Promise( (resolve, reject) => {
     pagarme.client.connect({ api_key: process.env.API_PAGARME })
       .then( client => {
@@ -62,5 +63,23 @@ export default function pagarCartao(data) {
     ) .catch( (err) => {
       return reject(err)
     })
+  })
+}
+
+export function calcularParcelas(valor) {
+  return new Promise( (resolve, reject) => {
+    pagarme.client.connect({ api_key: process.env.API_PAGARME })
+      .then(client => client.transactions.calculateInstallmentsAmount({
+        id: 1234,
+        max_installments: 12,
+        free_installments: 0,
+        interest_rate: 13,
+        amount: valor
+      }))
+      .then((resposta) => {
+        return resolve(resposta)
+      }) .catch( (err) => {
+        return reject(err)
+      })
   })
 }
