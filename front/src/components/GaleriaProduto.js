@@ -7,12 +7,12 @@ const GaleriaProduto = (props) => {
   const [indexDestaque, setIndexDestaque] = useState(0)
 
   useEffect( () => {
-    setImagemDestaque(props.imagens[0].filename)
+    setImagemDestaque(props.imagens[0])
     console.log('imagens: ', props.imagens)
   }, [props.imagens])
 
   const trocaImagem = (index) => {
-    setImagemDestaque(props.imagens[index].filename)
+    setImagemDestaque(props.imagens[index])
     setIndexDestaque(index)
   }
 
@@ -30,7 +30,7 @@ const GaleriaProduto = (props) => {
 
             {index !== indexDestaque && <OverlayImagem />}
 
-            <ThumbImagem src={`${ process.env.REACT_APP_IMAGES_URL }/${res.filename}`} alt="Thumb Produto" />
+            <ThumbImagem src={`${ process.env.REACT_APP_IMAGES_URL }/${res}`} alt="Thumb Produto" />
 
           </ThumbBotao>
 

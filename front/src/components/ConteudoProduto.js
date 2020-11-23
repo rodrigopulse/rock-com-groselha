@@ -19,7 +19,6 @@ const ConteudoProduto = (props) => {
   useEffect( () => {
     getParcelas(10)
       .then( res => {
-          console.log(res.data.parcelas.installments[12])
           setParcelas(res.data.parcelas.installments[12])
       }).catch( err => {
         console.log('Erro: ', err)

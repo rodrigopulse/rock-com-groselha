@@ -17,7 +17,7 @@ const CardProduto = (props) => {
 
     <CardProdutoContainer to={`/produto/${props.produto.slug}`}>
 
-      <ImagemDestaqueProduto src = { `${ process.env.REACT_APP_IMAGES_URL }/${props.produto.imagens[0].filename}` } />
+      <ImagemDestaqueProduto src = { `${ process.env.REACT_APP_IMAGES_URL }/${props.produto.imagens[0]}` } />
 
       <CardProdutoConteudo>
 
