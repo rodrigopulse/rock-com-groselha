@@ -6,7 +6,14 @@ class ProdutoController {
   // Cadastra produto
   async cadastra (req, res) {
     try {
+      console.log(req.files)
       req.body.imagens = req.files
+      const imagens = req.body.imagens
+      req.body.imagens = []
+      imagens.forEach(res => {
+        req.body.imagens.push(res.filename)
+      })
+      console.log(req.body.imagens)
       const produto = await Produto.create(req.body)
       return res.status(201).json( produto )
     } catch (err) {
